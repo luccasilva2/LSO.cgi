@@ -1300,8 +1300,6 @@ function App() {
         setShowPrinterWindow(!showPrinterWindow);
     };
 
-
-
     return (
         <div className="app-shell h-screen w-screen text-cyan-100 overflow-hidden flex flex-col relative selection:bg-cyan-900 selection:text-white">
 
