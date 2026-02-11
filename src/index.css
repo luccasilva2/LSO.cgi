@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #04090d;
+  --bg-1: #08131a;
+  --bg-2: #0a1e27;
+  --text-main: #dcfbff;
+  --accent: #4ad9d1;
+  --accent-soft: #22b8ab;
+  --accent-warm: #f3b36c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-main);
+  font-family: 'Sora', sans-serif;
+  background:
+    radial-gradient(circle at 16% 14%, rgba(34, 184, 171, 0.2), transparent 40%),
+    radial-gradient(circle at 84% 10%, rgba(243, 179, 108, 0.12), transparent 34%),
+    linear-gradient(145deg, var(--bg-0), var(--bg-1) 55%, var(--bg-2));
+  overflow: hidden;
+}
+
+.font-mono,
+.ui-mono {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+
+.app-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.app-bg-grid {
+  background-image:
+    linear-gradient(rgba(74, 217, 209, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 217, 209, 0.08) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 95%);
+}
+
+.app-bg-noise {
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  mix-blend-mode: soft-light;
+}
+
+.app-orb {
+  animation: orbFloat 9s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat {
+  from {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* Custom Scrollbar Hide */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.mask-image-gradient {
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
